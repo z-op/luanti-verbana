@@ -53,7 +53,7 @@ verbana.settings.moderator_priv = get_setting('verbana.moderator_priv', 'ban')
 verbana.settings.kick_priv = get_setting('verbana.kick_priv', nil)
 
 verbana.settings.verified_privs = minetest.string_to_privs(get_setting('default_privs', 'shout,interact'))
-verbana.settings.unverified_privs = minetest.string_to_privs(get_setting('verbana.unverified_privs', 'shout'))
+verbana.settings.unverified_privs = minetest.string_to_privs(get_setting('verbana.unverified_privs', ''))
 verbana.settings.whitelisted_privs = minetest.string_to_privs(get_setting('verbana.whitelisted_privs', ''))
 if #verbana.settings.whitelisted_privs == 0 then verbana.settings.whitelisted_privs = nil end
 
