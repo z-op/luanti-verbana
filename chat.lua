@@ -24,8 +24,9 @@ end
 table.insert(minetest.registered_on_chat_messages, 1,
     function(name, message)
         local player_id = data.get_player_id(name)
+        if not player_id then return false end
         local player_status = data.get_player_status(player_id)
-        local is_unverified = player_status.id == data.player_status.unverified.id
+        local is_unverified = player_status and player_status.id == data.player_status.unverified.id
         if is_unverified then
             local cmsg = ('[unverified] <%s> %s'):format(name, message)
 			if minetest.check_player_privs(name, {shout=true}) then
